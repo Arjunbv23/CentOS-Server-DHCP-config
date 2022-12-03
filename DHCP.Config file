@@ -1,0 +1,35 @@
+#CentOS is an community/ free version provided by Red-Hat (RHEL)
+
+# CentOS Server - DHCP service
+
+***-----START-----***
+
+yum install dhcp (or) yum install dhcp -y
+
+cd /etc/dhcpd/
+
+ls
+
+// cat dhcpd.config
+
+nano dhcpd.config
+
+<!---- You can change the configurations below but, be mindful about subnetting in metworks ----!>
+
+subnet 192.168.1.0 netmask 255.255.255.0 {
+	range 192.168.1.10 192.168.1.100;
+	option routers 192.168.1.1;
+	option domain-name-servers 8.8.8.8;
+	default-lease-time 86400;
+}
+
+service dhcpd start
+service dhcpd status // shows running or stopped.
+
+// systemctl enable dhcp --> optional for continuous service.
+
+cd /var/lib/dhcpd/
+ls
+cat dhcpd.leases
+
+***----------***-------END-------***--------------***
