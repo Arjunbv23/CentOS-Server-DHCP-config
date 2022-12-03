@@ -14,7 +14,7 @@ ls
 
 nano dhcpd.config
 
-<!---- You can change the configurations below but, be mindful about subnetting in metworks ----!>
+<!---- You can change the configurations below but, be mindful about subnetting in networks ----!>
 
 subnet 192.168.1.0 netmask 255.255.255.0 {
 	range 192.168.1.10 192.168.1.100;
